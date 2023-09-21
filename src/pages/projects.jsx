@@ -11,6 +11,7 @@ const Projects = () => (
       <Box
         borderRadius="lg"
         p={2}
+        mb={6}
         textAlign="center"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
         css={{ backdropFilter: 'blur(10px)' }}
