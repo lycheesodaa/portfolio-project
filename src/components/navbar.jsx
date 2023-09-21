@@ -83,7 +83,9 @@ const Navbar = () => {
                   return (
                     <MenuItem as={ReactRouterLink} to={link.link}>
                       {link.label}
-                      {link.label === "Source" ? <IoLogoGithub /> : ""}
+                      <Box pl={2}>
+                        {link.logo}
+                      </Box>
                     </MenuItem>
 
                   )
