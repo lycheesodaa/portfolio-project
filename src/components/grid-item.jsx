@@ -1,6 +1,4 @@
-// import NextLink from 'next/link'
-// import Image from 'next/image'
-import { Box, Text, LinkBox, LinkOverlay, Link, Image } from '@chakra-ui/react'
+import { Box, Text, LinkBox, LinkOverlay, Link, Image, useColorModeValue } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 import { Link as ReactRouterLink } from 'react-router-dom'
 
@@ -24,7 +22,13 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
 
 export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
-    <Link as={ReactRouterLink} to={`/projects/${id}`} p={2}>
+    <Link
+      as={ReactRouterLink}
+      to={`/projects/${id}`}
+      p={2}
+      color={useColorModeValue('black', 'white')}
+      _hover={{ textDecoration: "none" }}
+    >
       <LinkBox cursor="pointer">
         <Image
           src={thumbnail}
