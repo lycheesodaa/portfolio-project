@@ -8,13 +8,11 @@ function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
 }
 
-const GLBList = ['/need_some_space.glb', '/space_boi.glb', 'space_exploration_wlp_series_8.glb']
-
 const VoxelDog = () => {
   const refContainer = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
-  const GLBURL = (process.env.NODE_ENV === 'production' ? '' : '') + GLBList[1]
+  const GLBURL = (process.env.NODE_ENV === 'production' ? '' : '') + '/space_boi.glb'
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer

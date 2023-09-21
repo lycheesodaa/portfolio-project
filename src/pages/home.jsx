@@ -15,7 +15,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
 import { BioSection, BioYear } from '../components/bio'
 import Article from '../components/layout/article'
-import Section from '../components/section'
+import { Section } from '../components/section'
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 import { Link as ReactRouterLink } from 'react-router-dom'
 
@@ -63,11 +63,9 @@ const Home = () => {
               overflow="hidden"
             >
               <ProfileImage
-                src="https://www.wellingtonadvertiser.com/wp-content/uploads/2023/04/Holland-LopWEB-scaled.jpg"
+                src="/profile.JPG"
                 alt="Profile image"
                 borderRadius="full"
-              // width="100%"
-              // height="100%"
               />
             </Box>
           </Box>
@@ -84,7 +82,8 @@ const Home = () => {
             <br />
             <br />
             If I'm not coding, you can find me doing Kendo🥋 or Fencing🤺!<br /> I also love travelling
-            while photographing new people and places, so if you're thinking the same, just hit me up in my socials 😜
+            while photographing new people and places, so if you're thinking the same and need someone spontaneous
+            to travel or do a photoshoot with, feel free to contact me through my socials! 😜
           </Paragraph>
           <Box align="center" my={4}>
             <Link as={ReactRouterLink} to="/projects" p={2}>
@@ -105,7 +104,11 @@ const Home = () => {
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>
-            Started my undergraduate studies at SMU
+            Started undergraduate studies at SMU
+          </BioSection>
+          <BioSection>
+            <BioYear>2021</BioYear>
+            Took over as President @ <b>SMU Kendo Club</b>
           </BioSection>
           <BioSection>
             <BioYear>2022</BioYear>
@@ -127,17 +130,21 @@ const Home = () => {
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            Achievements
+            Certifications & Achievements
           </Heading>
-          <li><section></section></li>
-          <li><section></section></li>
-          <li><section></section></li>
-          <li><section></section></li>
+          <li />
+          AWS Certified Solutions Architect - Associate | <b>Nov 2022</b>
+          <li />
+          Top 5 in CARRO Singapore's Hackathon 2022
+          <li />
+          Top 12 in NinjaVan Code Dojo 2022
+          <li />
+          Oracle Certified Foundations Associate, Java | <b>Apr 2021</b>
         </Section>
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            On the web
+            Socials
           </Heading>
           <List>
             <ListItem>
@@ -176,9 +183,9 @@ const Home = () => {
           </List>
 
           <Box align="center" my={4}>
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                <a href="https://drive.google.com/u/0/uc?id=1KuynPsJgXlR33EV-WnUWId0S0ar0alsI&export=download">Download Resume</a>
-              </Button>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              <a href="https://drive.google.com/u/0/uc?id=1KuynPsJgXlR33EV-WnUWId0S0ar0alsI&export=download">Download Resume</a>
+            </Button>
           </Box>
         </Section>
       </Container>

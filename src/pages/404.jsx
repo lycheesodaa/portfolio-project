@@ -12,7 +12,7 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 const NotFound = () => {
   return (
     <Container>
-      <Heading as="h1">Not found</Heading>
+      <Heading as="h1" pt="20">Not found</Heading>
       <Text>The page you&apos;re looking for was not found.</Text>
       <Divider my={6} />
       <Center my={6}>

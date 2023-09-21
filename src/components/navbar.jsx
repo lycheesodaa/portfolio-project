@@ -2,17 +2,20 @@ import { Box, Container, Flex, Heading, IconButton, Link, Menu, MenuButton, Menu
 import ThemeToggleButton from './theme-toggle-button'
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { IoLogoGithub } from 'react-icons/io5'
 
 const menuLinks = [
   {
-    name: "home",
-    link: "/",
-    label: "Home"
-  },
-  {
     name: "projects",
     link: "/projects",
-    label: "Projects"
+    label: "Projects",
+    logo: null
+  },
+  {
+    name: "source",
+    link: "https://github.com/lycheesodaa/portfolio-project",
+    label: "Source",
+    logo: <IoLogoGithub />
   },
 ]
 
@@ -36,7 +39,9 @@ const Navbar = () => {
       >
         <Flex align={'center'} mr={5}>
           <Heading as="h1" size="md">
-            Wei Soon Cheong
+            <ReactRouterLink to={"/"}>
+              Wei Soon Cheong
+            </ReactRouterLink>
           </Heading>
         </Flex>
 
@@ -50,8 +55,13 @@ const Navbar = () => {
         >
           {menuLinks.map((link) => {
             return (
-              <Link as={ReactRouterLink} to={link.link} p={2}>
-                {link.label}
+              <Link as={ReactRouterLink} to={link.link} p={1}>
+                <Flex align={"center"}>
+                  {link.label}
+                  <Box pl={2}>
+                    {link.logo}
+                  </Box>
+                </Flex>
               </Link>
             )
           })}
@@ -73,7 +83,9 @@ const Navbar = () => {
                   return (
                     <MenuItem as={ReactRouterLink} to={link.link}>
                       {link.label}
+                      {link.label === "Source" ? <IoLogoGithub /> : ""}
                     </MenuItem>
+
                   )
                 })}
               </MenuList>
