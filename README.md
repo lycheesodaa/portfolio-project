@@ -1,5 +1,7 @@
 # Wei Soon's Portfolio
 
+Click [here](https://wei-soon.vercel.app/) to visit the website.
+
 This project was inspired by Takuya Matsuyama's website, but using the default React library.
 
 You can view his website and source code [here](https://www.craftz.dog).
