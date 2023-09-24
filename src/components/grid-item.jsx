@@ -35,8 +35,8 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           className="grid-item-thumbnail"
           placeholder="blur"
           minH={120}
-          maxH={[10000, 230, 120]}
-          minW={[0, 450, 230]}
+          maxH={['12em', 230, 120]}
+          minW={'100%'}
           objectFit={"cover"}
         />
         <LinkOverlay href={`/${id}`}>

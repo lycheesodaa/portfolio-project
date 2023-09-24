@@ -13,12 +13,12 @@ const Projects = () => (
     <Container>
       <Section>
         <Heading as="h3" fontSize={20} mt={20}>
-          Coding Projects
+          Projects
         </Heading>
       </Section>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6} mb={20}>
-        <ProjectSection>
+        <ProjectSection delay={0.1}>
           <WorkGridItem
             id="hydrohomies"
             title="Hydrohomies"
@@ -28,7 +28,7 @@ const Projects = () => (
           </WorkGridItem>
         </ProjectSection>
 
-        <ProjectSection>
+        <ProjectSection delay={0.1}>
           <WorkGridItem
             id="ascent"
             title="Ascent"
@@ -38,7 +38,7 @@ const Projects = () => (
           </WorkGridItem>
         </ProjectSection>
 
-        <ProjectSection delay={0.1}>
+        <ProjectSection delay={0.2}>
           <WorkGridItem
             id="bobsmarketplace"
             title="Bob's Marketplace"
@@ -48,7 +48,7 @@ const Projects = () => (
           </WorkGridItem>
         </ProjectSection>
 
-        <ProjectSection delay={0.1}>
+        <ProjectSection delay={0.2}>
           <WorkGridItem
             id="joybot"
             thumbnail={thumbJoybot}
@@ -60,7 +60,7 @@ const Projects = () => (
       </SimpleGrid>
 
 
-      <Section delay={0.2}>
+      {/* <Section delay={0.2}>
         <Divider my={6} />
         <Heading as="h3" fontSize={20} mb={4}>
           Designs & Photography
@@ -68,7 +68,7 @@ const Projects = () => (
         <Center fontSize={15} fontFamily={'mono'} mt={10}>
           Coming soon...
         </Center>
-      </Section>
+      </Section> */}
     </Container>
   </Article>
 )
