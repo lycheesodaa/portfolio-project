@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { DogSpinner, DogContainer } from './voxel-dog-loader'
+import { useBreakpoint, useMediaQuery } from '@chakra-ui/react'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -13,6 +14,8 @@ const VoxelDog = () => {
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
   const GLBURL = (process.env.NODE_ENV === 'production' ? '' : '') + '/space_boi.glb'
+
+  const [isMobile] = useMediaQuery('(max-width: 760px)');
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
@@ -53,7 +56,14 @@ const VoxelDog = () => {
       // 640 -> 240
       // 8   -> 6
       const scale = scH * 0.00001
-      const camera = new THREE.OrthographicCamera(
+      const camera = isMobile ? new THREE.OrthographicCamera(
+        -scale - 6,
+        scale + 6,
+        scale + 6,
+        -scale - 2,
+        0.8,
+        500000
+      ) : new THREE.OrthographicCamera(
         -scale - 12,
         scale + 12,
         scale + 7,

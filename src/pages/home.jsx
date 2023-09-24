@@ -9,7 +9,8 @@ import {
   ListItem,
   useColorModeValue,
   chakra,
-  Image
+  Image,
+  useMediaQuery
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
@@ -24,10 +25,13 @@ const ProfileImage = chakra(Image, {
 })
 
 const Home = () => {
+
+  const [isMobile] = useMediaQuery('(max-width: 760px)');
+
   return (
     <Article>
       <Container>
-        <Box
+        {isMobile ? <></> : <Box
           borderRadius="lg"
           mb={6}
           p={3}
@@ -36,10 +40,10 @@ const Home = () => {
           css={{ backdropFilter: 'blur(10px)' }}
         >
           Click and scroll to interact!
-        </Box>
+        </Box>}
 
         <Box display={{ md: 'flex' }}>
-          <Box flexGrow={1}>
+          <Box flexGrow={1} mt={isMobile ? 20 : 0}>
             <Heading as="h2" variant="page-title">
               Wei Soon Cheong
             </Heading>

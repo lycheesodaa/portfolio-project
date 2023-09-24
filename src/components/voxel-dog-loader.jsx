@@ -19,7 +19,7 @@ export const DogContainer = forwardRef(({ children }, ref) => (
     m="auto"
     mb='-60px'
     w="100%"
-    h={[100, 200, 300, 400, 600]}
+    h={[300, 300, 400, 400, 600]}
   >
     {children}
   </Box>
