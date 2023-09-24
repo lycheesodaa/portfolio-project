@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../navbar";
 import VoxelDog from "../voxel-dog";
 import { Container } from "@chakra-ui/react";
+import Footer from "../footer";
 
 const Root = () => {
   return (
@@ -11,6 +12,7 @@ const Root = () => {
         <VoxelDog />
       </Container>
       <Outlet />
+      <Footer />
     </div>
   );
 };

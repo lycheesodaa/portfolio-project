@@ -24,8 +24,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
     <Link
       as={ReactRouterLink}
-      to={`/projects/${id}`}
-      p={2}
+      to={`/${id}`}
       color={useColorModeValue('black', 'white')}
       _hover={{ textDecoration: "none" }}
     >
@@ -35,8 +34,12 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
+          minH={120}
+          maxH={[10000, 230, 120]}
+          minW={[0, 450, 230]}
+          objectFit={"cover"}
         />
-        <LinkOverlay href={`/projects/${id}`}>
+        <LinkOverlay href={`/${id}`}>
           <Text mt={2} fontSize={20}>
             {title}
           </Text>

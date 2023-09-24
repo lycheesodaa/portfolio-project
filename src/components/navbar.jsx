@@ -3,6 +3,7 @@ import ThemeToggleButton from './theme-toggle-button'
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { IoLogoGithub } from 'react-icons/io5'
+import { useEffect, useState } from 'react'
 
 const menuLinks = [
   {
@@ -20,13 +21,28 @@ const menuLinks = [
 ]
 
 const Navbar = () => {
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <Box
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue('#ffffff40', '#20202380')}
-      css={{ backdropFilter: 'blur(10px)' }}
+      bg={useColorModeValue('#f0e7db55', '#20202380')}
+      css={scrollPosition > 0 ? { backdropFilter: 'blur(20px)' } : {}}
       zIndex={2}
     >
       <Container

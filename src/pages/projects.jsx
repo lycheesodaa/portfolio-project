@@ -1,60 +1,74 @@
-import { Container, Heading, SimpleGrid, Divider, Box, useColorModeValue } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Divider, Box, useColorModeValue, Center } from '@chakra-ui/react'
 import Article from '../components/layout/article'
-import { ProjectSection } from '../components/section'
+import { Section, ProjectSection } from '../components/section'
 import { WorkGridItem } from '../components/grid-item'
 
 import thumbHydrohomies from '/projects/hydrohomies/hydrohomies_home.png?url'
+import thumbAscent from '/projects/ascent/Ascent_home.PNG?url'
+import thumbJoybot from '/projects/joybot/conversation.PNG?url'
+import thumbBobs from '/projects/bobs/bobs_home.png?url'
 
 const Projects = () => (
   <Article title="Projects">
     <Container>
-      <Box
-        borderRadius="lg"
-        p={2}
-        mb={6}
-        textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{ backdropFilter: 'blur(10px)' }}
-      >
-        <Heading as="h1" fontSize={25} >
-          - Projects -
+      <Section>
+        <Heading as="h3" fontSize={20} mt={20}>
+          Coding Projects
         </Heading>
-      </Box>
+      </Section>
 
-
-      <SimpleGrid columns={[1, 1, 2]} gap={6}>
+      <SimpleGrid columns={[1, 1, 2]} gap={6} mb={20}>
         <ProjectSection>
-          <WorkGridItem id="hydrohomies" title="Hydrohomies" thumbnail={thumbHydrohomies}>
+          <WorkGridItem
+            id="hydrohomies"
+            title="Hydrohomies"
+            thumbnail={thumbHydrohomies}
+          >
             A web application providing real-time water usage updates and recommendations to households.
           </WorkGridItem>
         </ProjectSection>
 
         <ProjectSection>
           <WorkGridItem
-            id="Adulting101"
-            title="Adulting101"
-            thumbnail={thumbHydrohomies}
+            id="ascent"
+            title="Ascent"
+            thumbnail={thumbAscent}
           >
-            A CRUD based Django webapp, with a Markdown to HTML Converter and an integrated AI chat bot.
+            A web solution allowing banks and merchants to process and view millions of transactions with flexible campaign rewards.
           </WorkGridItem>
         </ProjectSection>
 
         <ProjectSection delay={0.1}>
           <WorkGridItem
-            id="fakeface"
-            title="Fake Face Classifier"
-            thumbnail={thumbHydrohomies}
+            id="bobsmarketplace"
+            title="Bob's Marketplace"
+            thumbnail={thumbBobs}
           >
-            A Machine Learning model using CNN to classify fake images generted using Generative Adversarial NetProjects (GANs).
+            A material commodities marketplace targeting local construction firms with reliable, cost-competitive material goods.
           </WorkGridItem>
         </ProjectSection>
 
         <ProjectSection delay={0.1}>
-          <WorkGridItem id="handgesture" thumbnail={thumbHydrohomies} title="Hand Gesture Recognition">
-            A machine learning Model that will Recognize Hand Gestures in real time using CNN and automated using Raspberry pi.
+          <WorkGridItem
+            id="joybot"
+            thumbnail={thumbJoybot}
+            title="Joybot"
+          >
+            A natural language processing GODEL-based chatbot aimed at assessing users' mental state in a friendly, lighthearted manner.
           </WorkGridItem>
         </ProjectSection>
       </SimpleGrid>
+
+
+      <Section delay={0.2}>
+        <Divider my={6} />
+        <Heading as="h3" fontSize={20} mb={4}>
+          Designs & Photography
+        </Heading>
+        <Center fontSize={15} fontFamily={'mono'} mt={10}>
+          Coming soon...
+        </Center>
+      </Section>
     </Container>
   </Article>
 )

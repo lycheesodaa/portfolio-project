@@ -100,7 +100,7 @@ const Home = () => {
           </Heading>
           <BioSection>
             <BioYear>2000</BioYear>
-            Born in Singapore
+            Born in Singapore 🇸🇬
           </BioSection>
           <BioSection>
             <BioYear>2020</BioYear>

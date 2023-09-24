@@ -7,6 +7,10 @@ import Root from './components/layout/root'
 import NotFound from './pages/404'
 import theme from './lib/theme'
 import Projects from './pages/projects'
+import Hydrohomies from './pages/projects/hydrohomies'
+import Ascent from './pages/projects/ascent'
+import Joybot from './pages/projects/joybot'
+import Bobsmarketplace from './pages/projects/bobsmarketplace'
 
 const router = createBrowserRouter([
   {
@@ -20,7 +24,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/projects",
-        element: <Projects />
+        element: <Projects />,
+      },
+      {
+        path: "/hydrohomies",
+        element: <Hydrohomies />
+      },
+      {
+        path: "/ascent",
+        element: <Ascent />
+      },
+      {
+        path: "/joybot",
+        element: <Joybot />
+      },
+      {
+        path: "/bobsmarketplace",
+        element: <Bobsmarketplace />
       },
       {
         path: "/*",
