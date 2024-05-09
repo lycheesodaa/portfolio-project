@@ -22,19 +22,15 @@ const Joybot = () => (
       <Title>
         Joybot <Badge>Aug-Dec 2022</Badge>
       </Title>
-      <Center my={6}>
-        <Image src="/projects/joybot/joybot-logo.png" alt="icon" />
-      </Center>
       <P>
-        In the status quo, water security has always been a huge issue for Singapore,
-        with the current daily demand for water standing at about 430 million gallons a day.
+        Joybot is a natural language processing GODEL-based chatbot aimed at assessing users' mental state in a 
+        friendly, lighthearted manner. 
       </P>
       <br />
       <P>
-        This project finds a cheaper, alternative, generally applicable solution to reduce household water consumption.
-        It consists of an iOT system using image recognition to detect water meter readings, a real-time dashboard
-        showing water consumption statistics, and a recommendation system providing up-to-date suggestions based on
-        previous water consumption data.
+        The model is designed to assess the user's mental state through a statement-depression classifier while
+        at the same time maintaining a simple conversation to provide emotional support and guidance. The efficacy
+        of the classifier can be strengthened by extending the number of evaluation turns in the model.
       </P>
 
       <br />
