@@ -82,10 +82,10 @@ const Joybot = () => (
         <Center>Preview</Center>
       </Heading>
 
-      <WorkImage src="/projects/joybot/conversation.PNG" alt="Home" />
+      <WorkImage src="/projects/joybot/conversation.PNG" alt="Convo and Eval" />
       <SimpleGrid columns={2} gap={2}>
-        <WorkImage src="/projects/joybot/diagnosis.PNG" alt="Dashboard" />
-        <WorkImage src="/projects/joybot/information.PNG" alt="Advice" />
+        <WorkImage src="/projects/joybot/diagnosis.PNG" alt="Diagnosis" />
+        <WorkImage src="/projects/joybot/information.PNG" alt="Information" />
       </SimpleGrid>
     </Container>
   </Article>

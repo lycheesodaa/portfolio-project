@@ -61,7 +61,7 @@ const Ascent = () => (
 
       <WorkImage src="/projects/ascent/Ascent_home.PNG" alt="Home" />
       <WorkImage src="/projects/ascent/Ascent_dashboard.PNG" alt="Dashboard" />
-      <WorkImage src="/projects/ascent/bank1.PNG" alt="Advice" />
+      <WorkImage src="/projects/ascent/bank1.PNG" alt="Campaigns" />
     </Container>
   </Article>
 )
