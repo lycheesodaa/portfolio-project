@@ -11,6 +11,8 @@ import Hydrohomies from './pages/projects/hydrohomies'
 import Ascent from './pages/projects/ascent'
 import Joybot from './pages/projects/joybot'
 import Bobsmarketplace from './pages/projects/bobsmarketplace'
+import DialogueAct from './pages/projects/dialogueact'
+import ScreamNWin from './pages/projects/screamnwin'
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "/bobsmarketplace",
         element: <Bobsmarketplace />
+      },
+      {
+        path: "/dialogueact",
+        element: <DialogueAct />
+      },
+      {
+        path: "/screamnwin",
+        element: <ScreamNWin />
       },
       {
         path: "/*",

@@ -1,5 +1,5 @@
 import { Link as ReactRouterLink } from 'react-router-dom'
-import { Heading, Box, Image, Link, Badge } from '@chakra-ui/react'
+import { Heading, Box, Image, Link, Badge, Tooltip } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export const Title = ({ children }) => (
@@ -18,7 +18,9 @@ export const Title = ({ children }) => (
 )
 
 export const WorkImage = ({ src, alt }) => (
-  <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />
+  <Tooltip label={alt}>
+    <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} />
+  </Tooltip>
 )
 
 export const Meta = ({ children }) => (
