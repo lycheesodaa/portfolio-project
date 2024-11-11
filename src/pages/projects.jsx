@@ -10,6 +10,7 @@ import thumbBobs from '/projects/bobs/bobs_home.png?url'
 import thumbDA from '/projects/dialogueact/model_archi.png?url'
 import thumbScream from '/projects/scream/end.png?url'
 import thumbPlaceholder from '/projects/placeholder.png?url'
+import thumbPlaceholderLight from '/projects/placeholder_light.png?url'
 
 const Projects = () => (
   <Article title="Projects">
@@ -24,7 +25,7 @@ const Projects = () => (
         <ProjectSection delay={0.1}>
           <WorkGridItem
             id="selfdisclosure"
-            thumbnail={thumbPlaceholder}
+            thumbnail={useColorModeValue(thumbPlaceholderLight, thumbPlaceholder)}
             title="Online Self-Disclosure"
           >
             Psychology research investigating the mediation effects between online self-disclosure and social anxiety.
@@ -34,7 +35,7 @@ const Projects = () => (
         <ProjectSection delay={0.1}>
           <WorkGridItem
             id="emotionforecasting"
-            thumbnail={thumbPlaceholder}
+            thumbnail={useColorModeValue(thumbPlaceholderLight, thumbPlaceholder)}
             title="Emotion Forecasting"
           >
             Investigating the performance of emotional forecasting with time-series foundation models.
