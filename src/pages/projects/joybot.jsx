@@ -35,7 +35,7 @@ const Joybot = () => (
 
       <br />
       Datasets used for training/fine-tuning:
-      <UnorderedList ml={4} mb={4}>
+      <UnorderedList mx={4} mb={4}>
         <ListItem>
           <Link href="https://www.kaggle.com/datasets/infamouscoder/depression-reddit-cleaned">
             Depression Reddit Dataset <ExternalLinkIcon mx="2px" />

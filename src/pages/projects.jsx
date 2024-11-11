@@ -9,6 +9,7 @@ import thumbJoybot from '/projects/joybot/conversation.PNG?url'
 import thumbBobs from '/projects/bobs/bobs_home.png?url'
 import thumbDA from '/projects/dialogueact/model_archi.png?url'
 import thumbScream from '/projects/scream/end.png?url'
+import thumbPlaceholder from '/projects/placeholder.png?url'
 
 const Projects = () => (
   <Article title="Projects">
@@ -18,6 +19,28 @@ const Projects = () => (
           Research Projects
         </Heading>
       </Section>
+
+      <SimpleGrid columns={[1, 1, 2]} gap={6} mb={10}>
+        <ProjectSection delay={0.1}>
+          <WorkGridItem
+            id="selfdisclosure"
+            thumbnail={thumbPlaceholder}
+            title="Online Self-Disclosure"
+          >
+            Psychology research investigating the mediation effects between online self-disclosure and social anxiety.
+          </WorkGridItem>
+        </ProjectSection>
+        
+        <ProjectSection delay={0.1}>
+          <WorkGridItem
+            id="emotionforecasting"
+            thumbnail={thumbPlaceholder}
+            title="Emotion Forecasting"
+          >
+            Investigating the performance of emotional forecasting with time-series foundation models.
+          </WorkGridItem>
+        </ProjectSection>
+      </SimpleGrid>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6} mb={10}>
         <ProjectSection delay={0.1}>

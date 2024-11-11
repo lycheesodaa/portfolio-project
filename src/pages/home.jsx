@@ -80,7 +80,7 @@ const Home = () => {
             About
           </Heading>
           <Paragraph>
-            Hi! 👋 I'm Wei Soon, a final-year Computer Science student from Singapore Management University, 
+            Hi! 👋 I'm Wei Soon, a final-year Computer Science student from Singapore Management University,
             majoring in AI and Psychology with a knack for solving analytical problems and learning new skills quickly.
             I am primarily interested in bridging AI and humans to further enhance the effectiveness of current technological
             solutions and optimise their usage.
@@ -127,32 +127,32 @@ const Home = () => {
             <BioYear>2023</BioYear>
             Mobile Software Engineer Intern @ <b>Thales DIS</b> 👨‍💻
           </BioSection>
+          <BioSection>
+            <BioYear>2024</BioYear>
+            Research Attachment @ <b>Agency for Science, Technology and Research (A*STAR)</b> 👨‍💻
+          </BioSection>
 
+        </Section>
+
+        <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Certifications & Awards
+          </Heading>
+          📜 AWS Certified Solutions Architect - Associate | <b>Nov 2022</b>
+          <br />
+          📜 Oracle Certified Foundations Associate, Java | <b>Apr 2021</b>
+          <br />
+          🏆 SCIS Aspirations Scholarship | <b>2020-2024</b>
         </Section>
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             Interests
           </Heading>
-          🥋 Sports - Running, Kendo, Fencing <br/>
-          📸 Photography, Travelling <br/>
-          🤖 Programming and AI <br/>
+          🥋 Sports - Running, Kendo, Fencing <br />
+          📸 Photography, Travelling <br />
+          🤖 Programming and AI <br />
           🧠 Psychology
-        </Section>
-
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            Certifications & Achievements
-          </Heading>
-          📜 AWS Certified Solutions Architect - Associate | <b>Nov 2022</b>
-          <br />
-          💻 Top 5 in CARRO Singapore's Hackathon | <b>2022</b>
-          <br />
-          💻 Top 12 in NinjaVan Code Dojo | <b>2022</b>
-          <br />
-          📜 Oracle Certified Foundations Associate, Java | <b>Apr 2021</b>
-          <br />
-          📜 SCIS Aspirations Scholarship | <b>2020-2024</b>
         </Section>
 
         <Section delay={0.3}>
@@ -197,7 +197,7 @@ const Home = () => {
 
           <Box align="center" my={4}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              <a href="https://drive.google.com/u/0/uc?id=1KuynPsJgXlR33EV-WnUWId0S0ar0alsI&export=download">Download Resume</a>
+              <a href="https://drive.google.com/file/d/1oDPNi7TqqPZS4So9ocv5-3ZhbjJETBR3/view?usp=sharing">View/Download Resume</a>
             </Button>
           </Box>
         </Section>

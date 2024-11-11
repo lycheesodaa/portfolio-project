@@ -13,6 +13,8 @@ import Joybot from './pages/projects/joybot'
 import Bobsmarketplace from './pages/projects/bobsmarketplace'
 import DialogueAct from './pages/projects/dialogueact'
 import ScreamNWin from './pages/projects/screamnwin'
+import EmotionForecasting from './pages/projects/emotionforecasting'
+import SelfDisclosure from './pages/projects/selfdisclosure'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
         index: true,
         path: "/",
         element: <Home />
+      },
+      {
+        path: "/*",
+        element: <NotFound />
       },
       {
         path: "/projects",
@@ -45,17 +51,23 @@ const router = createBrowserRouter([
         element: <Bobsmarketplace />
       },
       {
+        path: "/screamnwin",
+        element: <ScreamNWin />
+      },
+
+      // Research
+      {
         path: "/dialogueact",
         element: <DialogueAct />
       },
       {
-        path: "/screamnwin",
-        element: <ScreamNWin />
+        path: "/selfdisclosure",
+        element: <SelfDisclosure />
       },
       {
-        path: "/*",
-        element: <NotFound />
-      }
+        path: "/emotionforecasting",
+        element: <EmotionForecasting />
+      },
     ],
   }
 ])
