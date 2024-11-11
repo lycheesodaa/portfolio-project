@@ -5,7 +5,8 @@ import {
   ListItem,
   Heading,
   Center,
-  Tooltip
+  Tooltip,
+  Link
 } from '@chakra-ui/react'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -15,19 +16,25 @@ const DialogueAct = () => (
   <Article title="Dialogue Act">
     <Container>
       <Title>
-        DialogueAct <Badge>Jan-Apr 2024</Badge>
+        <Container mt={2} padding={0}>
+          Dialogue act analysis in conversations with dementia patients <Badge>Jan-Apr 2024</Badge>
+        </Container>
       </Title>
-      {/* <Center my={6}>
-        <Image src="/projects/dialogueact/model_archi.gif" alt="icon" />
-      </Center> */}
+      
       <P>
         With the rise of the number of cases of dementia worldwide, the burden on healthcare providers increase as well.
-      </P>
-      <br />
-      <P>
+        
         This project aims to alleviate the stressors faced by healthcare providers through a computational analysis of Dialogue Acts <i>-
         a common classification method for conversational utterances -</i> within client-pracitioner conversations. Through the insights 
         brought about by said analysis, we strive to improve the engagement and robustness of existing intelligent conversational agents.
+      </P>
+      <P>
+        Results show that clients with dementia have longer speaking turns and predominantly non-opinion statements in their speeches.
+        Practitioners tend to have more varied dialogue purposes, from questioning to acknolwedgement, which can be attributed to the facilitative nature of their roles.
+      </P>
+      <P>
+        We use these analytical insights to fine-tune and prompt-engineer an open source language model, Gemma, to ascertain if dialogue acts can result in more curated conversation flows for dementia clients.
+        Preliminary results show that using these dialogue acts as additional context inputs can enrich the resulting responses from the model, demonstrating its potential in future conversation systems.
       </P>
 
       <List ml={4} my={4}>
@@ -37,7 +44,7 @@ const DialogueAct = () => (
         </ListItem> */}
         <ListItem>
           <Meta>Technologies</Meta>
-          <span>Python, PyTorch, HuggingFace, Gemma</span>
+          <span>Python, PyTorch, HuggingFace, <Link href='https://huggingface.co/google/gemma-2-2b-it'>Gemma</Link></span>
         </ListItem>
         {/* <ListItem>
           <Meta>Github</Meta>

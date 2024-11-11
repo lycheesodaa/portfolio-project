@@ -24,7 +24,13 @@ const SelfDisclosure = () => (
       </Title>
 
       <P>
-      This study explored the mediating effect of basic psychological need satisfaction on the association between self-disclosure and social anxiety in social media environments, particularly Instagram. Using structural equation modeling, we analyzed data from 310 undergraduate Instagram users. For each of the five dimensions of self-disclosure — intent, valence, honesty, amount, and depth — only intentional, positively valenced, and honest self-disclosure was significantly linked to decreased social anxiety on social media through enhanced psychological need satisfaction. These findings suggest that qualitative and authentic aspects of self-disclosure, rather than the quantity or depth play a crucial role in reducing social anxiety on social media.  This study contributes to a nuanced understanding of how self-disclosure practices positively impact mental health in online environments.
+      This study explored the mediating effect of basic psychological need satisfaction on the association between self-disclosure and social anxiety in social media environments, particularly Instagram.
+      Using structural equation modeling, we analyzed data from 310 undergraduate Instagram users.
+      </P>
+      <P>
+      For each of the five dimensions of self-disclosure — intent, valence, honesty, amount, and depth — only intentional, positively valenced, and honest self-disclosure was significantly linked to decreased social anxiety on social media through enhanced psychological need satisfaction.
+      These findings suggest that qualitative and authentic aspects of self-disclosure, rather than the quantity or depth play a crucial role in reducing social anxiety on social media.
+      This study contributes to a nuanced understanding of how self-disclosure practices positively impact mental health in online environments.
       </P>
 
       <List mx={4} my={4}>

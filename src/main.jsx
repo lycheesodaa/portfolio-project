@@ -15,6 +15,7 @@ import DialogueAct from './pages/projects/dialogueact'
 import ScreamNWin from './pages/projects/screamnwin'
 import EmotionForecasting from './pages/projects/emotionforecasting'
 import SelfDisclosure from './pages/projects/selfdisclosure'
+import Gallery from './pages/gallery'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
         path: "/projects",
         element: <Projects />,
       },
+      {
+        path: "/gallery",
+        element: <Gallery />,
+      },
+
+      // Projects
       {
         path: "/hydrohomies",
         element: <Hydrohomies />

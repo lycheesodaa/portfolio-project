@@ -13,6 +13,12 @@ const menuLinks = [
     logo: null
   },
   {
+    name: "gallery",
+    link: "/gallery",
+    label: "Gallery",
+    logo: null
+  },
+  {
     name: "source",
     link: "https://github.com/lycheesodaa/portfolio-project",
     label: "Source",

@@ -7,7 +7,8 @@ import {
   Heading,
   Center,
   Image,
-  OrderedList
+  OrderedList,
+  UnorderedList
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
@@ -30,7 +31,13 @@ const EmotionForecasting = () => (
       
       <OrderedList padding={3}>
         <ListItem>
-          Using news sentiment/emotion as covariates to stock forecasting in the Financial News and Stock Price Integration Dataset (FNSPID)
+          Using news sentiment/emotion as covariates to stock forecasting in the Financial News and Stock Price Integration Dataset (FNSPID).
+          This is achieved by using a multivariate forecasting approach with either sentiment + stock data or emotion + stock data, and evaluating them against the performance of the model on stock data only.
+          {/* <UnorderedList pl={2}>
+            <ListItem>
+              Results show that on the Moirai model, the use of only stock data is more performant than having sentiment or emotion as covariates.
+            </ListItem>
+          </UnorderedList> */}
         </ListItem>
         <ListItem>
           Forecasting emotions in a multimodal approach using the Interactive Emotional Dyadic Motion Capture (IEMOCAP) dataset
@@ -38,7 +45,8 @@ const EmotionForecasting = () => (
       </OrderedList>
 
       <P>
-        Preliminary results show that time-series foundation models have the ability to forecast more fine-grained dimensions, as in the multimodal approach using both video and audio features captured in live conversations.
+        Preliminary results show that time-series foundation models have the ability to forecast more fine-grained dimensions pertaining to emotion, highlighted in the multimodal approach using both video and audio features captured in live conversations.
+        Future work on time-series foundation models can further refine their performance in these areas by expanding their training datasets into more technical representations of sentiment and emotion, and explore enriching single-variate predictions with the use of exogenous covariates.
       </P>
 
       <List margin={4}>
