@@ -12,58 +12,64 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const Ascent = () => (
-  <Article title="Ascent">
-    <Container>
-      <Title>
-        Ascent <Badge>Aug-Dec 2022</Badge>
-      </Title>
-      <Center my={6}>
-        <Image src="/projects/ascent/ascent.gif" alt="icon" />
-      </Center>
-      <P>
-        With heightened expectations from digital natives today, it has become more important than ever for businesses
-        to utilise loyalty programs to increase customer retention.
-      </P>
-      <br />
-      <P>
-        Ascent is a transaction processing system that can handle millions of transactions with specific spending rules
-        for various card types, accruing cashback, miles or points for each spend. The web application allows banks and
-        merchants to flexibly launch and manage campaigns, and end-users can also view their own spending and rewards
-        for various card options.
-      </P>
-      <br />
-      <P>
-        The project makes heavy use of Amazon Web Services' tremendous suite of tools, employing loosely-coupled architectural
-        strategies alongside common software design patterns and principles to further boost the speed and availability of 
-        the system as a whole.
-      </P>
+const Ascent = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
 
-      <List ml={4} my={4}>
-        <ListItem>
-          <Meta>Platform</Meta>
-          <span>Web application</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Stack</Meta>
-          <span>Javascript, React.js, Amazon Web Services</span>
-        </ListItem>
-        <ListItem>
-          <Meta>Github</Meta>
-          <span>Private repository</span>
-        </ListItem>
-      </List>
+  return (
+    <Article title="Ascent">
+      <Container>
+        <Title category={category}>
+          Ascent <Badge>Aug-Dec 2022</Badge>
+        </Title>
+        <Center my={6}>
+          <Image src="/projects/ascent/ascent.gif" alt="icon" />
+        </Center>
+        <P>
+          With heightened expectations from digital natives today, it has become more important than ever for businesses
+          to utilise loyalty programs to increase customer retention.
+        </P>
+        <br />
+        <P>
+          Ascent is a transaction processing system that can handle millions of transactions with specific spending rules
+          for various card types, accruing cashback, miles or points for each spend. The web application allows banks and
+          merchants to flexibly launch and manage campaigns, and end-users can also view their own spending and rewards
+          for various card options.
+        </P>
+        <br />
+        <P>
+          The project makes heavy use of Amazon Web Services' tremendous suite of tools, employing loosely-coupled architectural
+          strategies alongside common software design patterns and principles to further boost the speed and availability of
+          the system as a whole.
+        </P>
 
-      <Heading as="h4" fontSize={16} my={6}>
-        <Center>Preview</Center>
-      </Heading>
+        <List ml={4} my={4}>
+          <ListItem>
+            <Meta>Platform</Meta>
+            <span>Web application</span>
+          </ListItem>
+          <ListItem>
+            <Meta>Stack</Meta>
+            <span>Javascript, React.js, Amazon Web Services</span>
+          </ListItem>
+          <ListItem>
+            <Meta>Github</Meta>
+            <span>Private repository</span>
+          </ListItem>
+        </List>
 
-      <WorkImage src="/projects/ascent/Ascent_home.PNG" alt="Home" />
-      <WorkImage src="/projects/ascent/Ascent_dashboard.PNG" alt="Dashboard" />
-      <WorkImage src="/projects/ascent/bank1.PNG" alt="Campaigns" />
-    </Container>
-  </Article>
-)
+        <Heading as="h4" fontSize={16} my={6}>
+          <Center>Preview</Center>
+        </Heading>
+
+        <WorkImage src="/projects/ascent/Ascent_home.PNG" alt="Home" />
+        <WorkImage src="/projects/ascent/Ascent_dashboard.PNG" alt="Dashboard" />
+        <WorkImage src="/projects/ascent/bank1.PNG" alt="Campaigns" />
+      </Container>
+    </Article>
+  )
+}
 
 export default Ascent

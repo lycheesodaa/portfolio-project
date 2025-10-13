@@ -1,6 +1,7 @@
 import { Box, Text, LinkBox, LinkOverlay, Link, Image, useColorModeValue } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 import { Link as ReactRouterLink } from 'react-router-dom'
+import { useCategory } from '../context/category-context'
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
@@ -20,35 +21,40 @@ export const GridItem = ({ children, href, title, thumbnail }) => (
   </Box>
 )
 
-export const WorkGridItem = ({ children, id, title, thumbnail }) => (
-  <Box w="100%" textAlign="center">
-    <Link
-      as={ReactRouterLink}
-      to={`/${id}`}
-      color={useColorModeValue('black', 'white')}
-      _hover={{ textDecoration: "none" }}
-    >
-      <LinkBox cursor="pointer">
-        <Image
-          src={thumbnail}
-          alt={title}
-          className="grid-item-thumbnail"
-          placeholder="blur"
-          minH={120}
-          maxH={['12em', 230, 120]}
-          minW={'100%'}
-          objectFit={"cover"}
-        />
-        <LinkOverlay href={`/${id}`}>
-          <Text mt={2} fontSize={20}>
-            {title}
-          </Text>
-        </LinkOverlay>
-        <Text fontSize={14}>{children}</Text>
-      </LinkBox>
-    </Link>
-  </Box>
-)
+export const WorkGridItem = ({ children, id, title, thumbnail }) => {
+  const category = useCategory()
+
+  return (
+    <Box w="100%" textAlign="center">
+      <Link
+        as={ReactRouterLink}
+        to={`/${id}`}
+        color={useColorModeValue('black', 'white')}
+        _hover={{ textDecoration: "none" }}
+        state={{ category }}
+      >
+        <LinkBox cursor="pointer">
+          <Image
+            src={thumbnail}
+            alt={title}
+            className="grid-item-thumbnail"
+            placeholder="blur"
+            minH={120}
+            maxH={['12em', 230, 120]}
+            minW={'100%'}
+            objectFit={"cover"}
+          />
+          <LinkOverlay href={`/${id}`}>
+            <Text mt={2} fontSize={20}>
+              {title}
+            </Text>
+          </LinkOverlay>
+          <Text fontSize={14}>{children}</Text>
+        </LinkBox>
+      </Link>
+    </Box>
+  )
+}
 
 export const GridItemStyle = () => (
   <Global

@@ -12,13 +12,18 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const ScreamNWin = () => (
-  <Article title="Scream & Win">
-    <Container>
-      <Title>
-      Scream & Win <Badge>Jan 2024</Badge>
-      </Title>
+const ScreamNWin = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="Scream & Win">
+      <Container>
+        <Title category={category}>
+          Scream & Win <Badge>Jan 2024</Badge>
+        </Title>
       <Center mx={20}>
         <Image src="/projects/scream/SMUPD24logo_Yellow.png" alt="icon" maxWidth={200}/>
       </Center>
@@ -58,6 +63,7 @@ const ScreamNWin = () => (
       <WorkImage src="/projects/scream/end.png" />
     </Container>
   </Article>
-)
+  )
+}
 
 export default ScreamNWin

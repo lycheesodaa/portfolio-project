@@ -14,15 +14,20 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const EmotionForecasting = () => (
-  <Article title="EmotionForecasting">
-    <Container>
-      <Title>
-        <Container mt={2} padding={0}>
-          Forecasting with emotions in time-series foundation models <Badge>Aug-Dec 2025</Badge>
-        </Container>
-      </Title>
+const EmotionForecasting = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="EmotionForecasting">
+      <Container>
+        <Title category={category}>
+          <Container mt={2} padding={0}>
+            Forecasting with emotions in time-series foundation models <Badge>Aug-Dec 2025</Badge>
+          </Container>
+        </Title>
 
       <P>
         The study aims to investigate the applicability of the recent advent of time-series foundation models in tasks involving forecasting with emotion.
@@ -76,6 +81,7 @@ const EmotionForecasting = () => (
       <WorkImage src="/projects/EmotionForecasting/bank1.PNG" alt="Campaigns" /> */}
     </Container>
   </Article>
-)
+  )
+}
 
 export default EmotionForecasting

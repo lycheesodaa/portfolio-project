@@ -11,15 +11,20 @@ import {
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const DialogueAct = () => (
-  <Article title="Dialogue Act">
-    <Container>
-      <Title>
-        <Container mt={2} padding={0}>
-          Dialogue act analysis in conversations with dementia patients <Badge>Jan-Apr 2024</Badge>
-        </Container>
-      </Title>
+const DialogueAct = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="Dialogue Act">
+      <Container>
+        <Title category={category}>
+          <Container mt={2} padding={0}>
+            Dialogue act analysis in conversations with dementia patients <Badge>Jan-Apr 2024</Badge>
+          </Container>
+        </Title>
       
       <P>
         With the rise of the number of cases of dementia worldwide, the burden on healthcare providers increase as well.
@@ -62,6 +67,7 @@ const DialogueAct = () => (
       <WorkImage src="/projects/dialogueact/client-model-ft.png" alt="Model DA Flow Diagram" />
     </Container>
   </Article>
-)
+  )
+}
 
 export default DialogueAct

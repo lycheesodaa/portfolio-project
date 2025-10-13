@@ -12,13 +12,18 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const Hydrohomies = () => (
-  <Article title="hydrohomies">
-    <Container>
-      <Title>
-        hydrohomies <Badge>Aug-Dec 2022</Badge>
-      </Title>
+const Hydrohomies = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="hydrohomies">
+      <Container>
+        <Title category={category}>
+          hydrohomies <Badge>Aug-Dec 2022</Badge>
+        </Title>
       <Center my={6}>
         <Image src="/projects/hydrohomies/hydrohomies-logo.png" alt="icon" />
       </Center>
@@ -60,6 +65,7 @@ const Hydrohomies = () => (
       <WorkImage src="/projects/hydrohomies/hydrohomies_advice.png" alt="Advice" />
     </Container>
   </Article>
-)
+  )
+}
 
 export default Hydrohomies

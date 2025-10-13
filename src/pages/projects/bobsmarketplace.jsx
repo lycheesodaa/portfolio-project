@@ -15,13 +15,18 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const Bobsmarketplace = () => (
-  <Article title="Bob's Marketplace">
-    <Container>
-      <Title>
-        Bob's Marketplace <Badge>Jan-Apr 2022</Badge>
-      </Title>
+const Bobsmarketplace = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="Bob's Marketplace">
+      <Container>
+        <Title category={category}>
+          Bob's Marketplace <Badge>Jan-Apr 2022</Badge>
+        </Title>
       <Center my={6}>
         <Image src="/projects/bobs/bobs_marketplace.png" alt="icon" maxH={100}/>
       </Center>
@@ -62,6 +67,7 @@ const Bobsmarketplace = () => (
       <WorkImage src="/projects/bobs/bobs_marketplace_dashboard.png" alt="Dashboard" />
     </Container>
   </Article>
-)
+  )
+}
 
 export default Bobsmarketplace

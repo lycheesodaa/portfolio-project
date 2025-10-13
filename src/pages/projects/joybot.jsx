@@ -15,13 +15,18 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const Joybot = () => (
-  <Article title="Joybot">
-    <Container>
-      <Title>
-        Joybot <Badge>Aug-Dec 2022</Badge>
-      </Title>
+const Joybot = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="Joybot">
+      <Container>
+        <Title category={category}>
+          Joybot <Badge>Aug-Dec 2022</Badge>
+        </Title>
       <P>
         Joybot is a natural language processing GODEL-based chatbot aimed at assessing users' mental state in a 
         friendly, lighthearted manner. 
@@ -89,6 +94,7 @@ const Joybot = () => (
       </SimpleGrid>
     </Container>
   </Article>
-)
+  )
+}
 
 export default Joybot

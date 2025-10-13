@@ -12,16 +12,21 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, WorkImage, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Article from '../../components/layout/article'
+import { useLocation } from 'react-router-dom'
 
-const SelfDisclosure = () => (
-  <Article title="SelfDisclosure">
-    <Container>
-      <Title>
-        <Container mt={2} padding={0}>
-        The Mediating Effect of Psychological Need Satisfaction  on Self-Disclosure and Social Anxiety on Social Media:
-        A Structural Equation Modeling Approach <Badge>Aug-Dec 2025</Badge>
-        </Container>
-      </Title>
+const SelfDisclosure = () => {
+  const location = useLocation()
+  const category = location.state?.category || "Projects"
+
+  return (
+    <Article title="SelfDisclosure">
+      <Container>
+        <Title category={category}>
+          <Container mt={2} padding={0}>
+            The Mediating Effect of Psychological Need Satisfaction  on Self-Disclosure and Social Anxiety on Social Media:
+            A Structural Equation Modeling Approach <Badge>Aug-Dec 2025</Badge>
+          </Container>
+        </Title>
 
       <P>
       This study explored the mediating effect of basic psychological need satisfaction on the association between self-disclosure and social anxiety in social media environments, particularly Instagram.
@@ -48,6 +53,7 @@ const SelfDisclosure = () => (
       <WorkImage src="/projects/selfdisclosure/power_analysis_plot.png" alt="Power Analysis Results" />
     </Container>
   </Article>
-)
+  )
+}
 
 export default SelfDisclosure

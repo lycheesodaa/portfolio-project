@@ -2,10 +2,10 @@ import { Link as ReactRouterLink } from 'react-router-dom'
 import { Heading, Box, Image, Link, Badge, Tooltip } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
-export const Title = ({ children }) => (
+export const Title = ({ children, category = "Projects" }) => (
   <Box pt={100}>
     <Link as={ReactRouterLink} to="/projects">
-      Projects
+      {category}
     </Link>
     <span>
       {' '}
