@@ -41,8 +41,8 @@ const Gallery = () => {
 
     const shuffledImages = [...loadedImages];
     for (let i = shuffledImages.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledImages[i], shuffledImages[j]] = [shuffledImages[j], shuffledImages[i]];
     }
 
     setImages(shuffledImages);
@@ -90,7 +90,11 @@ const Gallery = () => {
 
   return (
     <Article title="Gallery">
-      <Container maxW={containerWidth} pt={20}>
+      <Container
+        maxW={containerWidth}
+        pt={20}
+        minH={loading ? "150vh" : "auto"} // Add minimum height while loading
+      >
         <Section delay={0.1}>
           <Heading as="h3" fontSize={20} mb={4}>
             Photography
@@ -170,7 +174,7 @@ const Gallery = () => {
             maxW="90vw"
             maxH="90vh"
           >
-            
+
             <ModalCloseButton
               color="white"
               size="lg"
@@ -196,7 +200,7 @@ const Gallery = () => {
                   color="white"
                   _hover={{ bg: 'whiteAlpha.200' }}
                   zIndex={2}
-              />
+                />
                 <Box
                   maxH="85vh"
                   maxW="85vw"
