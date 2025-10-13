@@ -67,7 +67,7 @@ const Home = () => {
               overflow="hidden"
             >
               <ProfileImage
-                src="/profile.JPG"
+                src="/profile_2025.jpg"
                 alt="Profile image"
                 borderRadius="full"
               />
@@ -79,12 +79,14 @@ const Home = () => {
           <Heading as="h3" variant="section-title">
             About
           </Heading>
-          Hi! 👋 I'm Wei Soon, a first-year Computer Science PhD student in National University of Singapore.
+          Hi! 👋 I'm Wei Soon, a first-year Computer Science PhD student from the National University of Singapore (NUS).
           My research interests lie in the intersection of time-series analysis, healthcare and explainable AI.
 
           <br />
           <br />
-          When I'm not doing research, you can find me doing Kendo🥋.
+          When I'm not doing research, you can find me practising
+          <Link href="https://www.instagram.com/p/C9gbSHBPsM8/?igsh=MWt5M2dkam5vNGZkcA==">🥋</Link>Kendo
+          at <Link href="https://www.seishinkansg.com/home">Seishinkan SG</Link>.
           I also love travelling while photographing new people and places.
           Feel free to visit the <Link as={ReactRouterLink} to="/gallery">gallery</Link> page for a glimpse of my hobby,
           or contact me through my socials below :)
@@ -127,15 +129,15 @@ const Home = () => {
           </BioSection> */}
           <BioSection>
             <BioYear>2024</BioYear>
-            Research Attachment @ <b>Agency for Science, Technology and Research (A*STAR)</b> 👨‍💻 (Ongoing)
+            Research Attachment @ <b>Agency for Science, Technology and Research (A*STAR)</b> 👨‍💻 <i>(Ongoing)</i>
           </BioSection>
           <BioSection>
             <BioYear>2025</BioYear>
-            Graduated from <b>Singapore Management University</b> 🎓
+            BSc (CS) @ <b>Singapore Management University</b> 🎓
           </BioSection>
           <BioSection>
             <BioYear>2025</BioYear>
-            Began PhD @ <b>National University of Singapore</b> 🧑‍🎓
+            PhD (CS) @ <b>National University of Singapore</b> 🧑‍🎓 <i>(Ongoing)</i>
           </BioSection>
 
         </Section>
@@ -152,7 +154,7 @@ const Home = () => {
           <br />
           🏆 NUS Research Scholarship | <b>2025-Ongoing</b>
         </Section>
-{/* 
+        {/* 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             Interests
