@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { DogSpinner, DogContainer } from './voxel-dog-loader'
-import { useBreakpoint, useMediaQuery } from '@chakra-ui/react'
+import { useMediaQuery } from '@chakra-ui/react'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -11,22 +11,51 @@ function easeOutCirc(x) {
 
 const VoxelDog = () => {
   const refContainer = useRef()
+  const refCamera = useRef()
   const [loading, setLoading] = useState(true)
   const refRenderer = useRef()
   const GLBURL = (process.env.NODE_ENV === 'production' ? '' : '') + '/space_boi.glb'
 
-  const [isMobile] = useMediaQuery('(max-width: 760px)');
+  const [isMobile] = useMediaQuery('(max-width: 760px)')
+
+  // Function to update camera aspect ratio
+  const updateCamera = useCallback((camera, container) => {
+    if (!camera || !container) return
+
+    const scW = container.clientWidth
+    const scH = container.clientHeight
+    const aspect = scW / scH
+
+    // Base frustum size - controls the zoom level
+    // Increase for more zoomed out, decrease for more zoomed in
+    const frustumSize = 9
+
+    // Calculate camera bounds based on aspect ratio to prevent stretching
+    camera.left = (-frustumSize * aspect) / 2
+    camera.right = (frustumSize * aspect) / 2
+    camera.top = frustumSize / 2
+    camera.bottom = -frustumSize / 2
+
+    camera.updateProjectionMatrix()
+  }, [])
 
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer
     const { current: container } = refContainer
+    const { current: camera } = refCamera
+
     if (container && renderer) {
       const scW = container.clientWidth
       const scH = container.clientHeight
 
       renderer.setSize(scW, scH)
+      
+      // Update camera aspect ratio on resize
+      if (camera) {
+        updateCamera(camera, container)
+      }
     }
-  }, [])
+  }, [updateCamera])
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -44,6 +73,7 @@ const VoxelDog = () => {
       renderer.outputColorSpace = THREE.SRGBColorSpace
       container.appendChild(renderer.domElement)
       refRenderer.current = renderer
+      
       const scene = new THREE.Scene()
 
       const target = new THREE.Vector3(-0.5, 1.2, 0)
@@ -53,19 +83,22 @@ const VoxelDog = () => {
         20 * Math.cos(0.2 * Math.PI)
       )
 
-      // 640 -> 240
-      // 8   -> 6
-      const scale = scH * 0.00001
+      // Edited for proper aspect ratio
+      const aspect = scW / scH
+      const frustumSize = 9
+
       const camera = new THREE.OrthographicCamera(
-        -scale - 8,
-        scale + 8,
-        scale + 5,
-        -scale - 2,
-        0.8,
-        500000
+        (-frustumSize * aspect) / 2,  // left
+        (frustumSize * aspect) / 2,   // right
+        frustumSize / 2,               // top
+        -frustumSize / 2,              // bottom
+        0.01,                          // near
+        1000                           // far
       )
+      
       camera.position.copy(initialCameraPosition)
       camera.lookAt(target)
+      refCamera.current = camera
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 2)
       scene.add(ambientLight)

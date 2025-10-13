@@ -17,13 +17,16 @@ export const DogContainer = forwardRef(({ children }, ref) => (
     ref={ref}
     className="voxel-dog"
     m="auto"
-    mb='-60px'
+    mb="-60px"
     w="100%"
     h={[300, 300, 400, 400, 600]}
+    position="relative"
   >
     {children}
   </Box>
 ))
+
+DogContainer.displayName = 'DogContainer'
 
 const Loader = () => {
   return (
