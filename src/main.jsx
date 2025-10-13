@@ -16,6 +16,7 @@ import ScreamNWin from './pages/projects/screamnwin'
 import EmotionForecasting from './pages/projects/emotionforecasting'
 import SelfDisclosure from './pages/projects/selfdisclosure'
 import Gallery from './pages/gallery'
+import Pubs from './pages/publications'
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/gallery",
         element: <Gallery />,
+      },
+      {
+        path: "/publications",
+        element: <Pubs />,
       },
 
       // Projects

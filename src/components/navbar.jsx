@@ -7,6 +7,12 @@ import { useEffect, useState } from 'react'
 
 const menuLinks = [
   {
+    name: "Publications",
+    link: "/publications",
+    label: "Publications",
+    logo: null
+  },
+  {
     name: "projects",
     link: "/projects",
     label: "Projects",

@@ -47,8 +47,8 @@ const Home = () => {
             <Heading as="h2" variant="page-title">
               Wei Soon Cheong
             </Heading>
-            <p>BSc (Computer Science) Undergraduate</p>
-            <p>🏫 Singapore Management University</p>
+            <p>PhD Student - School of Computing</p>
+            <p>🏫 National University of Singapore</p>
           </Box>
           <Box
             flexShrink={0}
@@ -79,24 +79,22 @@ const Home = () => {
           <Heading as="h3" variant="section-title">
             About
           </Heading>
-          <Paragraph>
-            Hi! 👋 I'm Wei Soon, a final-year Computer Science student from Singapore Management University,
-            majoring in AI and Psychology with a knack for solving analytical problems and learning new skills quickly.
-            I am primarily interested in bridging AI and humans to further enhance the effectiveness of current technological
-            solutions and optimise their usage.
-            <br />
-            <br />
-            If I'm not coding, you can find me doing Kendo🥋 or Fencing🤺!<br /> I also love travelling
-            while photographing new people and places, so if you're thinking the same and need someone spontaneous
-            to travel or do a photoshoot with, feel free to contact me through my socials! 😜
-          </Paragraph>
-          <Box align="center" my={4}>
+          Hi! 👋 I'm Wei Soon, a first-year Computer Science PhD student in National University of Singapore.
+          My research interests lie in the intersection of time-series analysis, healthcare and explainable AI.
+
+          <br />
+          <br />
+          When I'm not doing research, you can find me doing Kendo🥋.
+          I also love travelling while photographing new people and places.
+          Feel free to visit the <Link as={ReactRouterLink} to="/gallery">gallery</Link> page for a glimpse of my hobby,
+          or contact me through my socials below :)
+          {/* <Box align="center" my={4}>
             <Link as={ReactRouterLink} to="/projects" p={2}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
                 My projects
               </Button>
             </Link>
-          </Box>
+          </Box> */}
         </Section>
 
         <Section delay={0.2}>
@@ -111,7 +109,7 @@ const Home = () => {
             <BioYear>2017</BioYear>
             Graduated from <b>Raffles Institution</b> 🎓
           </BioSection>
-          <BioSection>
+          {/* <BioSection>
             <BioYear>2020</BioYear>
             Started Bachelor's @ <b>Singapore Management University</b>
           </BioSection>
@@ -126,10 +124,18 @@ const Home = () => {
           <BioSection>
             <BioYear>2023</BioYear>
             Mobile Software Engineer Intern @ <b>Thales DIS</b> 👨‍💻
-          </BioSection>
+          </BioSection> */}
           <BioSection>
             <BioYear>2024</BioYear>
-            Research Attachment @ <b>Agency for Science, Technology and Research (A*STAR)</b> 👨‍💻
+            Research Attachment @ <b>Agency for Science, Technology and Research (A*STAR)</b> 👨‍💻 (Ongoing)
+          </BioSection>
+          <BioSection>
+            <BioYear>2025</BioYear>
+            Graduated from <b>Singapore Management University</b> 🎓
+          </BioSection>
+          <BioSection>
+            <BioYear>2025</BioYear>
+            Began PhD @ <b>National University of Singapore</b> 🧑‍🎓
           </BioSection>
 
         </Section>
@@ -138,13 +144,15 @@ const Home = () => {
           <Heading as="h3" variant="section-title">
             Certifications & Awards
           </Heading>
+          🏆 SCIS Aspirations Scholarship | <b>2020-2025</b>
+          <br />
           📜 AWS Certified Solutions Architect - Associate | <b>Nov 2022</b>
           <br />
           📜 Oracle Certified Foundations Associate, Java | <b>Apr 2021</b>
           <br />
-          🏆 SCIS Aspirations Scholarship | <b>2020-2024</b>
+          🏆 NUS Research Scholarship | <b>2025-Ongoing</b>
         </Section>
-
+{/* 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
             Interests
@@ -153,7 +161,7 @@ const Home = () => {
           📸 Photography, Travelling <br />
           🤖 Programming and AI <br />
           🧠 Psychology
-        </Section>
+        </Section> */}
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
@@ -195,11 +203,11 @@ const Home = () => {
             </ListItem>
           </List>
 
-          <Box align="center" my={4}>
+          {/* <Box align="center" my={4}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
               <a href="https://drive.google.com/file/d/1oDPNi7TqqPZS4So9ocv5-3ZhbjJETBR3/view?usp=sharing">View/Download Resume</a>
             </Button>
-          </Box>
+          </Box> */}
         </Section>
       </Container>
     </Article>
