@@ -60,7 +60,7 @@ const Home = () => {
             </Heading>
             <p>📍 Singapore</p>
             <p>🏫 National University of Singapore</p>
-            <p>📧 <a href="mailto:weisoon@comp.nus.edu.sg"><i>weisoon@comp.nus.edu.sg</i></a></p>
+            <p>📫 <a href="mailto:weisoon@comp.nus.edu.sg"><i>weisoon@comp.nus.edu.sg</i></a></p>
           </Box>
           <Box
             flexShrink={0}
@@ -159,20 +159,9 @@ const Home = () => {
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            Contact/Socials
+            Links
           </Heading>
-          <List>
-            <ListItem>
-              <Link href="mailto:weisoon@comp.nus.edu.sg" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<EmailIcon />}
-                >
-                  Email
-                </Button>
-              </Link>
-            </ListItem>
+          <List display="flex" flexDirection="row" flexWrap="wrap" gap={2}>
             <ListItem>
               <Link href="https://orcid.org/0009-0001-2179-3455" target="_blank">
                 <Button
