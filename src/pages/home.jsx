@@ -80,6 +80,7 @@ const Home = () => {
             About
           </Heading>
           Hi! 👋 I'm Wei Soon, a first-year Computer Science PhD student from the National University of Singapore (NUS).
+          I'm currently in the <Link href="https://www.comp.nus.edu.sg/ubicomp/">NUS UbiComp Lab</Link>, under the supervision of Prof. Brian Lim.
           My research interests lie in the intersection of time-series analysis, healthcare and explainable AI.
 
           <br />
@@ -88,8 +89,7 @@ const Home = () => {
           <Link href="https://www.instagram.com/p/C9gbSHBPsM8/?igsh=MWt5M2dkam5vNGZkcA==">🥋</Link>Kendo
           at <Link href="https://www.seishinkansg.com/home">Seishinkan SG</Link>.
           I also love travelling while photographing new people and places.
-          Feel free to visit the <Link as={ReactRouterLink} to="/gallery">gallery</Link> page for a glimpse of my hobby,
-          or contact me through my socials below :)
+          Feel free to visit the <Link as={ReactRouterLink} to="/gallery">gallery</Link> page for a glimpse of my hobby.
           {/* <Box align="center" my={4}>
             <Link as={ReactRouterLink} to="/projects" p={2}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">

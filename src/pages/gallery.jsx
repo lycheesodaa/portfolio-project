@@ -173,15 +173,18 @@ const Gallery = () => {
             boxShadow="none"
             maxW="90vw"
             maxH="90vh"
+            onClick={onClose}
           >
 
-            <ModalCloseButton
-              color="white"
-              size="lg"
-              top={2}
-              right={2}
-              zIndex={2}
-            />
+            {!modalImageLoading && (
+              <ModalCloseButton
+                color="white"
+                size="lg"
+                top={2}
+                right={2}
+                zIndex={2}
+              />
+            )}
             <ModalBody p={0}>
               <Flex
                 justify="center"
@@ -192,7 +195,10 @@ const Gallery = () => {
                 <IconButton
                   aria-label="Previous image"
                   icon={<ChevronLeftIcon />}
-                  onClick={handlePrevImage}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePrevImage();
+                  }}
                   position="absolute"
                   left={4}
                   size="lg"
@@ -207,6 +213,7 @@ const Gallery = () => {
                   display="flex"
                   justifyContent="center"
                   alignItems="center"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {modalImageLoading && (
                     <Center
@@ -241,7 +248,10 @@ const Gallery = () => {
                 <IconButton
                   aria-label="Next image"
                   icon={<ChevronRightIcon />}
-                  onClick={handleNextImage}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleNextImage();
+                  }}
                   position="absolute"
                   right={4}
                   size="lg"
