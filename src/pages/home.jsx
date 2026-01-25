@@ -137,7 +137,7 @@ const Home = () => {
             Awards & Certifications
           </Heading>
           <BioSection>
-            <BioYear>2024 - Present</BioYear>
+            <BioYear>2025 - Present</BioYear>
             NUS Research Scholarship
           </BioSection>
           <BioSection>
