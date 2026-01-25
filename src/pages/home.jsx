@@ -11,13 +11,15 @@ import {
   chakra,
   Image,
   useMediaQuery,
+  useBreakpointValue,
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
+import { BioSection, BioYear, BioPosition } from '../components/bio'
 import Article from '../components/layout/article'
 import { Section } from '../components/section'
 import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
+import { FaOrcid } from 'react-icons/fa'
 import { Link as ReactRouterLink } from 'react-router-dom'
 
 const ProfileImage = chakra(Image, {
@@ -28,9 +30,18 @@ const Home = () => {
 
   const [isMobile] = useMediaQuery('(max-width: 760px)');
 
+  const containerWidth = useBreakpointValue({
+    base: '90%',     // 0-480px
+    sm: '70%',      // 480px+
+    md: '70%',      // 768px+
+    lg: '60%',     // 1024px+
+    xl: '40%',     // 1280px+
+    '2xl': '40%'   // 1536px+
+  });
+
   return (
     <Article>
-      <Container>
+      <Container maxW={containerWidth}>
         {isMobile ? <></> : <Box
           borderRadius="lg"
           mb={6}
@@ -47,8 +58,9 @@ const Home = () => {
             <Heading as="h2" variant="page-title">
               Wei Soon Cheong
             </Heading>
-            <p>PhD Student - School of Computing</p>
+            <p>📍 Singapore</p>
             <p>🏫 National University of Singapore</p>
+            <p>📧 <a href="mailto:weisoon@comp.nus.edu.sg"><i>weisoon@comp.nus.edu.sg</i></a></p>
           </Box>
           <Box
             flexShrink={0}
@@ -104,56 +116,36 @@ const Home = () => {
             Bio
           </Heading>
           <BioSection>
-            <BioYear>2000</BioYear>
-            Born in Singapore 🇸🇬
+            <BioYear>2025 - Present</BioYear>
+            <b>National University of Singapore</b>
+            <BioPosition>PhD in Computer Science</BioPosition>
           </BioSection>
           <BioSection>
-            <BioYear>2017</BioYear>
-            Graduated from <b>Raffles Institution</b> 🎓
-          </BioSection>
-          {/* <BioSection>
-            <BioYear>2020</BioYear>
-            Started Bachelor's @ <b>Singapore Management University</b>
+            <BioYear>2024 - Present</BioYear>
+            <b>A*STAR Institute for Infocomm Research</b>
+            <BioPosition>Research Assistant</BioPosition>
           </BioSection>
           <BioSection>
-            <BioYear>2021</BioYear>
-            President @ <b>SMU Kendo Club</b>
+            <BioYear>2020 - 2025</BioYear>
+            <b>Singapore Management University</b>
+            <BioPosition>BSc in Computer Science</BioPosition>
           </BioSection>
-          <BioSection>
-            <BioYear>2022</BioYear>
-            Software Engineer Intern @ <b>CrimsonLogic</b> 👨‍💻
-          </BioSection>
-          <BioSection>
-            <BioYear>2023</BioYear>
-            Mobile Software Engineer Intern @ <b>Thales DIS</b> 👨‍💻
-          </BioSection> */}
-          <BioSection>
-            <BioYear>2024</BioYear>
-            Research Attachment @ <b>Agency for Science, Technology and Research (A*STAR)</b> 👨‍💻 <i>(Ongoing)</i>
-          </BioSection>
-          <BioSection>
-            <BioYear>2025</BioYear>
-            BSc (CS) @ <b>Singapore Management University</b> 🎓
-          </BioSection>
-          <BioSection>
-            <BioYear>2025</BioYear>
-            PhD (CS) @ <b>National University of Singapore</b> 🧑‍🎓 <i>(Ongoing)</i>
-          </BioSection>
-
         </Section>
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            Certifications & Awards
+            Awards & Certifications
           </Heading>
-          🏆 SCIS Aspirations Scholarship | <b>2020-2025</b>
-          <br />
-          📜 AWS Certified Solutions Architect - Associate | <b>Nov 2022</b>
-          <br />
-          📜 Oracle Certified Foundations Associate, Java | <b>Apr 2021</b>
-          <br />
-          🏆 NUS Research Scholarship | <b>2025-Ongoing</b>
+          <BioSection>
+            <BioYear>2024 - Present</BioYear>
+            NUS Research Scholarship
+          </BioSection>
+          <BioSection>
+            <BioYear>2020 - 2025</BioYear>
+            SCIS Aspirations Scholarship
+          </BioSection>
         </Section>
+
         {/* 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
@@ -167,9 +159,31 @@ const Home = () => {
 
         <Section delay={0.3}>
           <Heading as="h3" variant="section-title">
-            Socials
+            Contact/Socials
           </Heading>
           <List>
+            <ListItem>
+              <Link href="mailto:weisoon@comp.nus.edu.sg" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<EmailIcon />}
+                >
+                  Email
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://orcid.org/0009-0001-2179-3455" target="_blank">
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<FaOrcid />}
+                >
+                  ORCID
+                </Button>
+              </Link>
+            </ListItem>
             <ListItem>
               <Link href="https://github.com/lycheesodaa/" target="_blank">
                 <Button
@@ -177,7 +191,7 @@ const Home = () => {
                   colorScheme="teal"
                   leftIcon={<IoLogoGithub />}
                 >
-                  @lycheesodaa
+                  Github
                 </Button>
               </Link>
             </ListItem>
@@ -188,7 +202,7 @@ const Home = () => {
                   colorScheme="teal"
                   leftIcon={<IoLogoLinkedin />}
                 >
-                  @Wei Soon Cheong
+                  LinkedIn
                 </Button>
               </Link>
             </ListItem>
@@ -199,7 +213,7 @@ const Home = () => {
                   colorScheme="teal"
                   leftIcon={<IoLogoInstagram />}
                 >
-                  @wei_soon
+                  Instagram
                 </Button>
               </Link>
             </ListItem>
