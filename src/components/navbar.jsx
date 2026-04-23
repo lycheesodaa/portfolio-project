@@ -3,6 +3,7 @@ import ThemeToggleButton from './theme-toggle-button'
 import { Link as ReactRouterLink } from 'react-router-dom'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import { IoLogoGithub } from 'react-icons/io5'
+import { TbExternalLink } from "react-icons/tb";
 import { useEffect, useState } from 'react'
 
 const menuLinks = [
@@ -28,7 +29,7 @@ const menuLinks = [
     name: "cv",
     link: "https://drive.google.com/file/d/1oDPNi7TqqPZS4So9ocv5-3ZhbjJETBR3/view?usp=sharing",
     label: "CV",
-    logo: null
+    logo: <TbExternalLink />
   },
   {
     name: "source",
