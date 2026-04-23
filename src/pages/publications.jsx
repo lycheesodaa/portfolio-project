@@ -17,12 +17,12 @@ const Pubs = () => {
     <Article title="Pubs">
         <Container pt={20} maxW={containerWidth}>
             <Section delay={0.1}>
-                <Heading as="h3" variant="section-title">
+                <Heading as="h3" fontSize={20} mb={4}>
                     Publications
                 </Heading>
             </Section>
             <Section delay={0.1}>
-                <Heading as="h3" fontSize={28} mb={4} mt={6}>
+                <Heading as="h3" variant="section-title" mt={6}>
                     2026
                 </Heading>
                 <UnorderedList spacing={3} pl={4}>
@@ -37,7 +37,7 @@ const Pubs = () => {
                     </ListItem>
                 </UnorderedList>
 
-                <Heading as="h3" variant="section-title" mt={8}>
+                <Heading as="h3" variant="section-title" mt={6}>
                     2024
                 </Heading>
                 <UnorderedList spacing={3} pl={4}>
