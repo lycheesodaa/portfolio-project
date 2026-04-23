@@ -117,18 +117,24 @@ const Home = () => {
           </Heading>
           <BioSection>
             <BioYear>2025 - Present</BioYear>
-            <b>National University of Singapore</b>
-            <BioPosition>PhD in Computer Science</BioPosition>
+            <Box>
+              <b>National University of Singapore</b>
+              <BioPosition>PhD in Computer Science</BioPosition>
+            </Box>
           </BioSection>
           <BioSection>
             <BioYear>2024 - Present</BioYear>
-            <b>A*STAR Institute for Infocomm Research</b>
-            <BioPosition>Research Assistant</BioPosition>
+            <Box>
+              <b>A*STAR Institute for Infocomm Research</b>
+              <BioPosition>Research Assistant</BioPosition>
+            </Box>
           </BioSection>
           <BioSection>
             <BioYear>2020 - 2025</BioYear>
-            <b>Singapore Management University</b>
-            <BioPosition>BSc in Computer Science</BioPosition>
+            <Box>
+              <b>Singapore Management University</b>
+              <BioPosition>BSc in Computer Science</BioPosition>
+            </Box>
           </BioSection>
         </Section>
 
