@@ -25,6 +25,12 @@ const menuLinks = [
     logo: null
   },
   {
+    name: "cv",
+    link: "https://drive.google.com/file/d/1oDPNi7TqqPZS4So9ocv5-3ZhbjJETBR3/view?usp=sharing",
+    label: "CV",
+    logo: null
+  },
+  {
     name: "source",
     link: "https://github.com/lycheesodaa/portfolio-project",
     label: "Source",
