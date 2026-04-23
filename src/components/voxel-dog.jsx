@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTFModel } from '../lib/model'
 import { DogSpinner, DogContainer } from './voxel-dog-loader'
-import { useMediaQuery } from '@chakra-ui/react'
+import { useMediaQuery, Box } from '@chakra-ui/react'
 
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4))
@@ -17,6 +17,26 @@ const VoxelDog = () => {
   const GLBURL = (process.env.NODE_ENV === 'production' ? '' : '') + '/space_boi.glb'
 
   const [isMobile] = useMediaQuery('(max-width: 760px)')
+  const [isOverlayActive, setIsOverlayActive] = useState(true)
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (refContainer.current && !refContainer.current.contains(event.target)) {
+        setIsOverlayActive(true)
+      }
+    }
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsOverlayActive(true)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   // Function to update camera aspect ratio
   const updateCamera = useCallback((camera, container) => {
@@ -156,7 +176,22 @@ const VoxelDog = () => {
   }, [handleWindowResize])
 
   return (
-    <DogContainer ref={refContainer}>{loading && <DogSpinner />}</DogContainer>
+    <DogContainer ref={refContainer}>
+      {loading && <DogSpinner />}
+      {isOverlayActive && (
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          w="100%"
+          h="100%"
+          zIndex={10}
+          cursor="pointer"
+          onClick={() => setIsOverlayActive(false)}
+          bg="transparent"
+        />
+      )}
+    </DogContainer>
   )
 }
 
