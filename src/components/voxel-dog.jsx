@@ -185,7 +185,7 @@ const VoxelDog = () => {
           left={0}
           w="100%"
           h="100%"
-          zIndex={10}
+          zIndex={1}
           cursor="pointer"
           onClick={() => setIsOverlayActive(false)}
           bg="transparent"
